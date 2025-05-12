@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Freedom Advisors - Expert Mutual Fund Guidance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/index-Cz1o_5Rj.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Financial Freedom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculators">Calculators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Achieve Your Financial Goals with Expert Guidance</h1>
+                    <p class="lead mb-4">Planning for a secure financial future? We provide personalized mutual fund recommendations tailored to your unique goals.</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">Start Your Journey</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg" alt="Financial Planning" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="calculators" class="calculators">
+        <div class="container">
+            <h2 class="text-center mb-5">Financial Calculators</h2>
+            <div class="row g-4">
+                <!-- SIP Calculator -->
+                <div class="col-md-4">
+                    <div class="calculator-card">
+                        <h3>SIP Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="mb-3">
+                                <label for="sipAmount" class="form-label">Monthly Investment (₹)</label>
+                                <input type="number" class="form-control" id="sipAmount" value="5000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="sipReturn" class="form-label">Expected Return (%)</label>
+                                <input type="number" class="form-control" id="sipReturn" value="12">
+                            </div>
+                            <div class="mb-3">
+                                <label for="sipTime" class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="sipTime" value="10">
+                            </div>
+                            <button onclick="calculateSIP()" class="btn btn-primary w-100">Calculate</button>
+                            <div class="result mt-3" id="sipResult"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inflation Calculator -->
+                <div class="col-md-4">
+                    <div class="calculator-card">
+                        <h3>Inflation Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="mb-3">
+                                <label for="presentValue" class="form-label">Present Value (₹)</label>
+                                <input type="number" class="form-control" id="presentValue" value="100000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inflationRate" class="form-label">Inflation Rate (%)</label>
+                                <input type="number" class="form-control" id="inflationRate" value="6">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inflationYears" class="form-label">Number of Years</label>
+                                <input type="number" class="form-control" id="inflationYears" value="10">
+                            </div>
+                            <button onclick="calculateInflation()" class="btn btn-primary w-100">Calculate</button>
+                            <div class="result mt-3" id="inflationResult"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step-up SIP Calculator -->
+                <div class="col-md-4">
+                    <div class="calculator-card">
+                        <h3>Step-up SIP Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="mb-3">
+                                <label for="stepupAmount" class="form-label">Monthly Investment (₹)</label>
+                                <input type="number" class="form-control" id="stepupAmount" value="5000">
+                            </div>
+                            <div class="mb-3">
+                                <label for="stepupIncrease" class="form-label">Yearly Increase (%)</label>
+                                <input type="number" class="form-control" id="stepupIncrease" value="10">
+                            </div>
+                            <div class="mb-3">
+                                <label for="stepupReturn" class="form-label">Expected Return (%)</label>
+                                <input type="number" class="form-control" id="stepupReturn" value="12">
+                            </div>
+                            <div class="mb-3">
+                                <label for="stepupTime" class="form-label">Time Period (Years)</label>
+                                <input type="number" class="form-control" id="stepupTime" value="10">
+                            </div>
+                            <button onclick="calculateStepupSIP()" class="btn btn-primary w-100">Calculate</button>
+                            <div class="result mt-3" id="stepupResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="text-center mb-5">What We Offer</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>Investment Planning</h3>
+                        <p>Customized investment plans for both long-term and short-term financial goals.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="bi bi-pie-chart"></i>
+                        </div>
+                        <h3>Asset Allocation</h3>
+                        <p>Optimal asset allocation strategies designed to maximize your returns.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Expert Guidance</h3>
+                        <p>Professional guidance for retirement, marriage, education, and more.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="icon-box">
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <h3>Portfolio Analysis</h3>
+                        <p>Comprehensive portfolio analysis and regular rebalancing services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card">
+                        <h2 class="text-center mb-4">Start Investing Smartly Today!</h2>
+                        <p class="text-center mb-5">Connect with us to receive goal-oriented financial plans and expert investment strategies.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="bi bi-envelope"></i>
+                                <a href="mailto:arbazbhaisiwan786@gmail.com">arbazbhaisiwan786@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="bi bi-whatsapp"></i>
+                                <a href="https://wa.me/7004084318">WhatsApp: 7004084318</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">Invest with confidence. Secure your future.</p>
+                    <p class="tagline">Plans for Goal – Your Path to Financial Freedom</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="calculators.js"></script>
+</body>
+</html>
